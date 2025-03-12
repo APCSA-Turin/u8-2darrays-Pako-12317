@@ -172,12 +172,13 @@ public class Algorithm2DArrays {
         if (diag1Sum != sum || diag2Sum != sum) {
             return false;
         }
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                for (int k = 0; k < n; k++) {
-                    for (int l = 0; l < n; l++) {
+        for (int i = 0; i < n; i++) { // Loop through each row
+            for (int j = 0; j < n; j++) { // Loop through each column in the current row
+                for (int k = 0; k < n; k++) { // Loop through each row again for comparison
+                    for (int l = 0; l < n; l++) { // Loop through each column in the comparison row
+                        // Check if the elements are not at the same position and are equal
                         if ((i != k || j != l) && arr[i][j] == arr[k][l]) {
-                            return false;
+                            return false; // Return false if a duplicate element is found
                         }
                     }
                 }
